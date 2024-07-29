@@ -7,17 +7,38 @@
     <style>
         body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
         .container { max-width: 800px; margin: auto; }
-        .header { text-align: center; }
+        .header { text-align: center; margin-bottom: 20px; }
         .section { margin-bottom: 20px; }
         h2 { border-bottom: 2px solid #333; padding-bottom: 5px; }
+        .footer { text-align: center; margin-top: 20px; }
+        .skill-bar {
+            background-color: #f3f3f3;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            height: 20px;
+            width: 100%;
+            position: relative;
+        }
+        .skill-bar-fill {
+            background-color: #4caf50;
+            height: 100%;
+            border-radius: 5px;
+            width: 0; /* Default width, change with percentages */
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .skill-name {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
             <h1>Thabang Tebele</h1>
-            <p>software Developer</p>
-            <p>Email | Phone | LinkedIn</p>
+            <p>Software Developer</p>
         </div>
         <div class="section">
             <h2>Summary</h2>
@@ -36,7 +57,13 @@
             <h2>Education</h2>
             <p><strong>North-West University</strong>,BSc Information Technology, February 2022 - December 2024</p>
             <ul>
-                <li>Relevant coursework</li>
+                <li>Programming Languages: C#,
+                    Java, C++,Python,HTML</li>
+                    <li>Desktop development</li>
+                    <li>Data Structures and Algorithms</li>
+                    <li>User Interface Programming</li>
+                    <li>Object orientated Programming</li>
+                    <li> System Analysis and Design</li>
                 <li>Projects</li>
                 <li>Achievements</li>
             </ul>
@@ -45,16 +72,15 @@
             <h2>Experience</h2>
             <p><strong>Promotor</strong>,Samplex Africa, November 2021 - February 2022</p>
             <ul>
-                <li>I am a final-year student studying information technology,
-                    and I am interested in using technology to inspire
-                    creativity and find solutions to challenging issues. I have
-                    built a solid foundation in data analysis, network security,
-                    and software development over my academic career. My
-                    desire to be at the forefront of technological
-                    advancements drives me to keep learning and developing
-                    in this constantly changing industry. To provide meaningful
-                    solutions, I am eager to expand my knowledge, contribute
-                    to current studies, and work with like-minded individuals.
+                <li>In my role, I was responsible for visiting various stores
+                    assigned to me and promoting Xiaomi smartphones to
+                    customers. Given that Xiaomi was not a well-known brand
+                    in South Africa at the time, many customers were
+                    unfamiliar with it. My task was to introduce them to Xiaomi,
+                    highlighting the brand's unique features and benefits to
+                    encourage them to consider purchasing these
+                    smartphones.
+                    
                     </li>
                 
             </ul>
@@ -74,10 +100,26 @@
         </div>
         <div class="section">
             <h2>Skills</h2>
-            <ul>
-                <li>Technical skill</li>
-                <li>Soft skill</li>
-            </ul>
+            <div class="skill-name">C#</div>
+            <div class="skill-bar">
+                <div class="skill-bar-fill" style="width: 80%;"></div>
+            </div>
+            <div class="skill-name">C++</div>
+            <div class="skill-bar">
+                <div class="skill-bar-fill" style="width: 70%;"></div>
+            </div>
+            <div class="skill-name">MySQL</div>
+            <div class="skill-bar">
+                <div class="skill-bar-fill" style="width: 75%;"></div>
+            </div>
+            <div class="skill-name">Java</div>
+            <div class="skill-bar">
+                <div class="skill-bar-fill" style="width: 60%;"></div>
+            </div>
+            <div class="skill-name">HTML and CSS</div>
+            <div class="skill-bar">
+                <div class="skill-bar-fill" style="width: 60%;"></div>
+            </div>
         </div>
         <div class="section">
             <h2>Projects</h2>
