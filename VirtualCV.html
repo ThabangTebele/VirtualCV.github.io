@@ -11,26 +11,34 @@
         .section { margin-bottom: 20px; }
         h2 { border-bottom: 2px solid #333; padding-bottom: 5px; }
         .footer { text-align: center; margin-top: 20px; }
-        .skill-bar {
-            background-color: #f3f3f3;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            height: 20px;
-            width: 100%;
-            position: relative;
+        .skill-circle {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
         }
-        .skill-bar-fill {
-            background-color: #4caf50;
-            height: 100%;
-            border-radius: 5px;
-            width: 0; /* Default width, change with percentages */
-            position: absolute;
-            top: 0;
-            left: 0;
+        .skill-circle svg {
+            transform: rotate(-90deg); /* Rotate to start from the top */
         }
-        .skill-name {
-            margin-bottom: 5px;
+        .skill-circle .circle-background {
+            fill: none;
+            stroke: #e6e6e6;
+            stroke-width: 10;
+        }
+        .skill-circle .circle-progress {
+            fill: none;
+            stroke-width: 10;
+            stroke-linecap: round;
+            stroke-dasharray: 282; /* Circumference of the circle */
+            stroke-dashoffset: 0; /* Change to reflect progress */
+        }
+        .skill-circle .label {
+            margin-top: 10px;
             font-weight: bold;
+        }
+        .skill-circle .percentage {
+            font-size: 20px;
+            font-weight: bold;
+            fill: #333;
         }
     </style>
 </head>
@@ -55,22 +63,21 @@
         </div>
         <div class="section">
             <h2>Education</h2>
-            <p><strong>North-West University</strong>,BSc Information Technology, February 2022 - December 2024</p>
+            <p><strong>North-West University</strong>, BSc Information Technology, February 2022 - December 2024</p>
             <ul>
-                <li>Programming Languages: C#,
-                    Java, C++,Python,HTML</li>
-                    <li>Desktop development</li>
-                    <li>Data Structures and Algorithms</li>
-                    <li>User Interface Programming</li>
-                    <li>Object orientated Programming</li>
-                    <li> System Analysis and Design</li>
+                <li>Programming Languages: C#, Java, C++, Python, HTML</li>
+                <li>Desktop Development</li>
+                <li>Data Structures and Algorithms</li>
+                <li>User Interface Programming</li>
+                <li>Object-Oriented Programming</li>
+                <li>System Analysis and Design</li>
                 <li>Projects</li>
                 <li>Achievements</li>
             </ul>
         </div>
         <div class="section">
             <h2>Experience</h2>
-            <p><strong>Promotor</strong>,Samplex Africa, November 2021 - February 2022</p>
+            <p><strong>Promotor</strong>, Samplex Africa, November 2021 - February 2022</p>
             <ul>
                 <li>In my role, I was responsible for visiting various stores
                     assigned to me and promoting Xiaomi smartphones to
@@ -80,9 +87,7 @@
                     highlighting the brand's unique features and benefits to
                     encourage them to consider purchasing these
                     smartphones.
-                    
-                    </li>
-                
+                </li>
             </ul>
             <p><strong>Student Assistant</strong>, North-West University, March 2022 - October 2022</p>
             <ul>
@@ -95,41 +100,61 @@
                     marks fairly and accurately. My knowledge of the subject
                     has improved as a result of this experience, which has also
                     improved my mentoring and communication abilities.
-                    </li>
+                </li>
             </ul>
         </div>
         <div class="section">
             <h2>Skills</h2>
-            <div class="skill-name">C#</div>
-            <div class="skill-bar">
-                <div class="skill-bar-fill" style="width: 80%;"></div>
+            <div class="skill-circle">
+                <svg width="100" height="100">
+                    <circle cx="50" cy="50" r="45" class="circle-background"></circle>
+                    <circle cx="50" cy="50" r="45" class="circle-progress" style="stroke: #4caf50; stroke-dashoffset: 56;"></circle>
+                    <text x="50" y="50" class="percentage" text-anchor="middle" alignment-baseline="middle">80%</text>
+                </svg>
+                <div class="label">C#</div>
             </div>
-            <div class="skill-name">C++</div>
-            <div class="skill-bar">
-                <div class="skill-bar-fill" style="width: 70%;"></div>
+            <div class="skill-circle">
+                <svg width="100" height="100">
+                    <circle cx="50" cy="50" r="45" class="circle-background"></circle>
+                    <circle cx="50" cy="50" r="45" class="circle-progress" style="stroke: #2196F3; stroke-dashoffset: 85;"></circle>
+                    <text x="50" y="50" class="percentage" text-anchor="middle" alignment-baseline="middle">70%</text>
+                </svg>
+                <div class="label">C++</div>
             </div>
-            <div class="skill-name">MySQL</div>
-            <div class="skill-bar">
-                <div class="skill-bar-fill" style="width: 75%;"></div>
+            <div class="skill-circle">
+                <svg width="100" height="100">
+                    <circle cx="50" cy="50" r="45" class="circle-background"></circle>
+                    <circle cx="50" cy="50" r="45" class="circle-progress" style="stroke: #FFC107; stroke-dashoffset: 70;"></circle>
+                    <text x="50" y="50" class="percentage" text-anchor="middle" alignment-baseline="middle">75%</text>
+                </svg>
+                <div class="label">MySQL</div>
             </div>
-            <div class="skill-name">Java</div>
-            <div class="skill-bar">
-                <div class="skill-bar-fill" style="width: 60%;"></div>
+            <div class="skill-circle">
+                <svg width="100" height="100">
+                    <circle cx="50" cy="50" r="45" class="circle-background"></circle>
+                    <circle cx="50" cy="50" r="45" class="circle-progress" style="stroke: #FF5722; stroke-dashoffset: 112;"></circle>
+                    <text x="50" y="50" class="percentage" text-anchor="middle" alignment-baseline="middle">60%</text>
+                </svg>
+                <div class="label">Java</div>
             </div>
-            <div class="skill-name">HTML and CSS</div>
-            <div class="skill-bar">
-                <div class="skill-bar-fill" style="width: 60%;"></div>
+            <div class="skill-circle">
+                <svg width="100" height="100">
+                    <circle cx="50" cy="50" r="45" class="circle-background"></circle>
+                    <circle cx="50" cy="50" r="45" class="circle-progress" style="stroke: #9C27B0; stroke-dashoffset: 112;"></circle>
+                    <text x="50" y="50" class="percentage" text-anchor="middle" alignment-baseline="middle">60%</text>
+                </svg>
+                <div class="label">HTML & CSS</div>
             </div>
         </div>
         <div class="section">
             <h2>Projects</h2>
-            <p><strong>Coffee store</strong></p>
+            <p><strong>Coffee Store</strong></p>
             <p>Brief description</p>
-            <p><strong>Messsaging app</strong></p>
+            <p><strong>Messaging App</strong></p>
             <p>Brief description</p>
         </div>
         <div class="footer">
-            <p>Email: thabangtebele@gmail.com | Phone: 071 186 5015 | LinkedIn: https://www.linkedin.com/in/thabang-tebele-014895295</p>
+            <p>Email: thabangtebele@gmail.com | Phone: 071 186 5015 | LinkedIn: <a href="https://www.linkedin.com/in/thabang-tebele-014895295" target="_blank">https://www.linkedin.com/in/thabang-tebele-014895295</a></p>
         </div>
     </div>
 </body>
