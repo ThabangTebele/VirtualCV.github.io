@@ -23,6 +23,7 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
+            box-sizing: border-box;
         }
         .left-column, .right-column {
             padding: 20px;
@@ -31,10 +32,12 @@
         .left-column {
             flex: 1;
             min-width: 250px;
+            max-width: 100%;
         }
         .right-column {
             flex: 2;
-            min-width: 500px;
+            min-width: 250px;
+            max-width: 100%;
         }
         .header {
             text-align: center;
@@ -87,6 +90,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
+            gap: 20px; /* Add space between skill circles */
         }
         .skill-circle {
             display: flex;
@@ -99,6 +103,8 @@
             border-radius: 50%;
             padding: 10px;
             box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            width: 100px;
+            height: 100px;
         }
         .skill-circle:hover {
             transform: scale(1.1);
@@ -133,8 +139,6 @@
             }
             .left-column, .right-column {
                 padding: 10px;
-            }
-            .left-column, .right-column {
                 flex: 1 1 100%;
                 min-width: auto;
             }
@@ -143,6 +147,13 @@
             }
             .header p {
                 font-size: 1em;
+            }
+            .skill-circle {
+                width: 80px;
+                height: 80px;
+            }
+            .skill-circle .percentage {
+                font-size: 16px;
             }
         }
         @media (max-width: 480px) {
@@ -155,9 +166,15 @@
             .skill-container {
                 flex-direction: column;
                 align-items: center;
+                gap: 10px;
             }
             .skill-circle {
                 margin: 10px 0;
+                width: 80px;
+                height: 80px;
+            }
+            .skill-circle .percentage {
+                font-size: 14px;
             }
         }
     </style>
