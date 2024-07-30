@@ -17,7 +17,7 @@
         .container {
             display: flex;
             flex-wrap: wrap;
-            max-width: 1200px;
+            max-width: 100%;
             margin: auto;
             background: #fff;
             border-radius: 8px;
@@ -30,11 +30,11 @@
         }
         .left-column {
             flex: 1;
-            min-width: 300px; /* Adjusted minimum width */
+            min-width: 250px; /* Minimum width for left column */
         }
         .right-column {
             flex: 2;
-            min-width: 300px; /* Adjusted minimum width */
+            min-width: 250px; /* Minimum width for right column */
         }
         .header {
             text-align: center;
@@ -86,7 +86,8 @@
         .skill-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between; /* Adjusted for more space on larger screens */
+            gap: 20px; /* Added gap between skill circles */
+            justify-content: center; /* Center skill circles */
         }
         .skill-circle {
             display: flex;
@@ -130,21 +131,15 @@
             fill: #333;
         }
         @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-            .left-column, .right-column {
-                padding: 10px;
-            }
-            .left-column, .right-column {
-                flex: 1 1 100%;
-                min-width: auto;
-            }
             .header h1 {
                 font-size: 2em;
             }
             .header p {
                 font-size: 1em;
+            }
+            .left-column, .right-column {
+                flex: 1 1 100%;
+                min-width: auto;
             }
         }
         @media (max-width: 480px) {
@@ -160,11 +155,11 @@
             }
             .skill-circle {
                 margin: 10px 0;
-                width: 80px; /* Adjusted for smaller screens */
-                height: 80px; /* Adjusted for smaller screens */
+                width: 80px;
+                height: 80px;
             }
             .skill-circle .percentage {
-                font-size: 14px; /* Adjusted for smaller screens */
+                font-size: 14px;
             }
         }
     </style>
