@@ -51,14 +51,14 @@
         .download-btn:hover {
             background: #1e88e5;
         }
-        /*.container {
+        .container {
             max-width: 1200px;
             margin: auto;
             background: #fff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
-        }*/
+        }
         .header {
             text-align: center;
             margin-bottom: 20px;
@@ -107,47 +107,59 @@
         }
         .skill-container, .tech-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            flex-direction: column;
+            align-items: flex-start;
         }
-        .skill-circle, .tech-meter {
+        .skill-circle, .tech-bar {
             display: flex;
             flex-direction: column;
             align-items: center;
             margin: 10px;
             text-align: center;
-            transition: transform 0.3s ease;
-            background: #f4f4f4;
-            border-radius: 50%;
-            padding: 10px;
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
         }
-        .skill-circle:hover, .tech-meter:hover {
+        .skill-circle:hover, .tech-bar:hover {
             transform: scale(1.1);
         }
-        .skill-circle svg, .tech-meter svg {
+        .skill-circle svg, .tech-bar svg {
             transform: rotate(0deg); 
         }
-        .skill-circle .circle-background, .tech-meter .meter-background {
+        .skill-circle .circle-background, .tech-bar .bar-background {
             fill: none;
             stroke: #e6e6e6;
             stroke-width: 10;
         }
-        .skill-circle .circle-progress, .tech-meter .meter-progress {
+        .skill-circle .circle-progress, .tech-bar .bar-progress {
             fill: none;
             stroke-width: 10;
             stroke-linecap: round;
             stroke-dasharray: 282;
             stroke-dashoffset: 0;
         }
-        .skill-circle .label, .tech-meter .label {
+        .skill-circle .label, .tech-bar .label {
             margin-top: 10px;
             font-weight: bold;
         }
-        .skill-circle .percentage, .tech-meter .percentage {
+        .skill-circle .percentage, .tech-bar .percentage {
             font-size: 20px;
             font-weight: bold;
             fill: #333;
+        }
+        .tech-bar {
+            margin: 10px 0;
+            width: 100%;
+        }
+        .bar-background {
+            background: #e6e6e6;
+            border-radius: 5px;
+            height: 20px;
+            position: relative;
+            width: 100%;
+        }
+        .bar-progress {
+            background: #2196F3;
+            height: 100%;
+            border-radius: 5px;
+            transition: width 0.3s ease;
         }
         @media (max-width: 768px) {
             .navbar {
@@ -166,7 +178,7 @@
                 flex-direction: column;
                 align-items: center;
             }
-            .skill-circle, .tech-meter {
+            .skill-circle, .tech-bar {
                 margin: 10px 0;
             }
         }
@@ -177,6 +189,7 @@
         <div class="nav-links">
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
+            <a href="#technologies">Technologies</a>
             <a href="#education">Education</a>
             <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
@@ -202,6 +215,11 @@
                 solutions, I am eager to expand my knowledge, contribute
                 to current studies, and work with like-minded individuals.</p>
         </div>
+
+
+
+
+
         <div id="skills" class="section">
             <h2>Programming Skills</h2>
             <div class="skill-container">
@@ -255,6 +273,47 @@
                 </div>
             </div>
         </div>
+
+
+        <div id="technologies" class="section">
+            <h2>Technologies</h2>
+            <div class="tech-container">
+                <div class="tech-bar">
+                    <div class="bar-background">
+                        <div class="bar-progress" style="width: 70%;"></div>
+                    </div>
+                    <div class="label">React</div>
+                </div>
+                <div class="tech-bar">
+                    <div class="bar-background">
+                        <div class="bar-progress" style="width: 50%;"></div>
+                    </div>
+                    <div class="label">Node.js</div>
+                </div>
+                <div class="tech-bar">
+                    <div class="bar-background">
+                        <div class="bar-progress" style="width: 75%;"></div>
+                    </div>
+                    <div class="label">Draw.io</div>
+                </div>
+                <div class="tech-bar">
+                    <div class="bar-background">
+                        <div class="bar-progress" style="width: 50%;"></div>
+                    </div>
+                    <div class="label">Azure</div>
+                </div>
+                <div class="tech-bar">
+                    <div class="bar-background">
+                        <div class="bar-progress" style="width: 60%;"></div>
+                    </div>
+                    <div class="label">Visual Studio</div>
+                </div>
+                <!-- Add more tech-bar elements here -->
+            </div>
+        </div>
+        
+
+
         <div id="education" class="section">
             <h2>Education</h2>
             <p><strong>North-West University</strong>, BSc Information Technology, February 2022 - December 2024</p>
@@ -266,6 +325,11 @@
                 <li>System Analysis and Design</li>
             </ul>
         </div>
+
+
+
+
+
         <div id="experience" class="section">
             <h2>Experience</h2>
             <p><strong>Promotor</strong>, Samplex Africa, November 2021 - February 2022</p>
@@ -294,6 +358,11 @@
                 </li>
             </ul>
         </div>
+
+
+
+
+
         <div id="projects" class="section">
             <h2>Projects</h2>
             <p><strong>Coffee Store</strong></p>
@@ -309,6 +378,11 @@
             | <a href="https://github.com/ThabangTebele?tab=repositories" target="_blank">GitHub</a></p>
         </div>
     </div>
+
+
+
+
+
     <script>
         // Highlight active link in navbar
         document.addEventListener('scroll', function() {
