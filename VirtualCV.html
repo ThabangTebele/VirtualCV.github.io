@@ -4,18 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My CV</title>
-
-    /* loading stylesheet for fonts*/
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-    /*retrieving icons*/
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             background-color: #f4f4f4;
         }
         .container {
@@ -27,6 +23,31 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
+            box-sizing: border-box;
+        }
+        .navbar {
+            width: 100%;
+            background-color: #333;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .content {
+            padding-top: 60px; /* Space for navbar */
         }
         .left-column, .right-column {
             padding: 20px;
@@ -35,10 +56,12 @@
         .left-column {
             flex: 1;
             min-width: 250px;
+            max-width: 100%;
         }
         .right-column {
             flex: 2;
-            min-width: 500px;
+            min-width: 250px;
+            max-width: 100%;
         }
         .header {
             text-align: center;
@@ -62,9 +85,6 @@
             padding-bottom: 5px;
             color: #333;
         }
-
-
-        /*Contact section*/
         .contact-section {
             text-align: center;
             margin-top: 20px;
@@ -90,14 +110,11 @@
         .contact-section i {
             margin-right: 10px;
         }
-
-
-
-        /*Programming skills  meter section*/
         .skill-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
+            gap: 20px;
         }
         .skill-circle {
             display: flex;
@@ -110,12 +127,14 @@
             border-radius: 50%;
             padding: 10px;
             box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            width: 100px;
+            height: 100px;
         }
         .skill-circle:hover {
             transform: scale(1.1);
         }
         .skill-circle svg {
-            transform: rotate(0deg); 
+            transform: rotate(0deg);
         }
         .skill-circle .circle-background {
             fill: none;
@@ -138,16 +157,12 @@
             font-weight: bold;
             fill: #333;
         }
-
-        /*Adjusting content for different devices section*/
         @media (max-width: 768px) {
             .container {
                 padding: 10px;
             }
             .left-column, .right-column {
                 padding: 10px;
-            }
-            .left-column, .right-column {
                 flex: 1 1 100%;
                 min-width: auto;
             }
@@ -156,6 +171,13 @@
             }
             .header p {
                 font-size: 1em;
+            }
+            .skill-circle {
+                width: 80px;
+                height: 80px;
+            }
+            .skill-circle .percentage {
+                font-size: 16px;
             }
         }
         @media (max-width: 480px) {
@@ -168,22 +190,34 @@
             .skill-container {
                 flex-direction: column;
                 align-items: center;
+                gap: 10px;
             }
             .skill-circle {
                 margin: 10px 0;
+                width: 80px;
+                height: 80px;
+            }
+            .skill-circle .percentage {
+                font-size: 14px;
             }
         }
     </style>
 </head>
 <body>
-
-
-    <div class="container">
+    <div class="navbar">
+        <a href="#about">About Me</a>
+        <a href="#skills">Programming Skills</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <div class="container content">
         <div class="header">
             <h1>Thabang Tebele</h1>
             <p>Software Developer</p>
         </div>
-        <div class="left-column">
+        <div id="about" class="left-column">
             <div class="section">
                 <h2>About Me</h2>
                 <p>I am a final-year student studying information technology,
@@ -197,10 +231,7 @@
                     solutions, I am eager to expand my knowledge, contribute
                     to current studies, and work with like-minded individuals.</p>
             </div>
-
-
-            /*skill meter containing programmming languages and the level of procficiency for each*/
-            <div class="section">
+            <div id="skills" class="section">
                 <h2>Programming Skills</h2>
                 <div class="skill-container">
                     <div class="skill-circle">
@@ -225,22 +256,6 @@
                             <circle cx="50" cy="50" r="45" class="circle-progress" style="stroke: #2196F3; stroke-dashoffset: 70;"></circle>
                             <text x="50" y="50" class="percentage" text-anchor="middle" alignment-baseline="middle">75%</text>
                         </svg>
-                        <div class="label">MySQL | Oracle</div>
-                    </div>
-                    <div class="skill-circle">
-                        <svg width="100" height="100">
-                            <circle cx="50" cy="50" r="45" class="circle-background"></circle>
-                            <circle cx="50" cy="50" r="45" class="circle-progress" style="stroke: #2196F3; stroke-dashoffset: 84;"></circle>
-                            <text x="50" y="50" class="percentage" text-anchor="middle" alignment-baseline="middle">70%</text>
-                        </svg>
-                        <div class="label">Java</div>
-                    </div>
-                    <div class="skill-circle">
-                        <svg width="100" height="100">
-                            <circle cx="50" cy="50" r="45" class="circle-background"></circle>
-                            <circle cx="50" cy="50" r="45" class="circle-progress" style="stroke: #2196F3; stroke-dashoffset: 70;"></circle>
-                            <text x="50" y="50" class="percentage" text-anchor="middle" alignment-baseline="middle">75%</text>
-                        </svg>
                         <div class="label">Python</div>
                     </div>
                     <div class="skill-circle">
@@ -254,10 +269,7 @@
                 </div>
             </div>
         </div>
-
-
-        /*Education section*/
-        <div class="right-column">
+        <div id="education" class="right-column">
             <div class="section">
                 <h2>Education</h2>
                 <p><strong>North-West University</strong>, BSc Information Technology, February 2022 - December 2024</p>
@@ -269,7 +281,7 @@
                     <li>System Analysis and Design</li>
                 </ul>
             </div>
-            <div class="section">
+            <div id="experience" class="section">
                 <h2>Experience</h2>
                 <p><strong>Promotor</strong>, Samplex Africa, November 2021 - February 2022</p>
                 <ul>
@@ -297,7 +309,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="section">
+            <div id="projects" class="section">
                 <h2>Projects</h2>
                 <p><strong>Coffee Store</strong></p>
                 <p>Brief description</p>
@@ -305,9 +317,7 @@
                 <p>Brief description</p>
             </div>
         </div>
-
-        /* contact details section*/
-        <div class="contact-section">
+        <div id="contact" class="contact-section">
             <h2>Contact</h2>
             <p><i class="fas fa-envelope"></i> thabangteble123@gmail.com</p>
             <p><i class="fas fa-phone"></i> 071 186 5015</p>
