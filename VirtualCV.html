@@ -13,60 +13,55 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            padding-top: 60px; /* To prevent content from being hidden behind the fixed navbar */
         }
-        .container {
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
             display: flex;
-            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            padding: 10px 20px;
+            border-bottom: 2px solid #2196F3;
+            z-index: 1000;
+            transition: background 0.3s ease;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2em;
+            padding: 5px;
+        }
+        .navbar a:hover, .navbar a.active {
+            background: #2196F3;
+            border-radius: 4px;
+        }
+        .download-btn {
+            background: #2196F3;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+        .download-btn:hover {
+            background: #1e88e5;
+        }
+        /*.container {
             max-width: 1200px;
             margin: auto;
             background: #fff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            box-sizing: border-box;
-        }
-        .navbar {
-            width: 100%;
-            background-color: #333;
-            overflow: hidden;
-            position: fixed;
-            top: 0;
-            z-index: 1000;
-        }
-        .navbar a {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-        }
-        .navbar a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-        .content {
-            padding-top: 60px; /* Space for navbar */
-        }
-        .left-column, .right-column {
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .left-column {
-            flex: 1;
-            min-width: 250px;
-            max-width: 100%;
-        }
-        .right-column {
-            flex: 2;
-            min-width: 250px;
-            max-width: 100%;
-        }
+        }*/
         .header {
             text-align: center;
             margin-bottom: 20px;
-            width: 100%;
         }
         .header h1 {
             margin: 0;
@@ -110,13 +105,12 @@
         .contact-section i {
             margin-right: 10px;
         }
-        .skill-container {
+        .skill-container, .tech-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
-            gap: 20px;
         }
-        .skill-circle {
+        .skill-circle, .tech-meter {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -127,195 +121,185 @@
             border-radius: 50%;
             padding: 10px;
             box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-            width: 100px;
-            height: 100px;
         }
-        .skill-circle:hover {
+        .skill-circle:hover, .tech-meter:hover {
             transform: scale(1.1);
         }
-        .skill-circle svg {
-            transform: rotate(0deg);
+        .skill-circle svg, .tech-meter svg {
+            transform: rotate(0deg); 
         }
-        .skill-circle .circle-background {
+        .skill-circle .circle-background, .tech-meter .meter-background {
             fill: none;
             stroke: #e6e6e6;
             stroke-width: 10;
         }
-        .skill-circle .circle-progress {
+        .skill-circle .circle-progress, .tech-meter .meter-progress {
             fill: none;
             stroke-width: 10;
             stroke-linecap: round;
             stroke-dasharray: 282;
             stroke-dashoffset: 0;
         }
-        .skill-circle .label {
+        .skill-circle .label, .tech-meter .label {
             margin-top: 10px;
             font-weight: bold;
         }
-        .skill-circle .percentage {
+        .skill-circle .percentage, .tech-meter .percentage {
             font-size: 20px;
             font-weight: bold;
             fill: #333;
         }
         @media (max-width: 768px) {
-            .container {
-                padding: 10px;
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
             }
-            .left-column, .right-column {
-                padding: 10px;
-                flex: 1 1 100%;
-                min-width: auto;
+            .navbar a {
+                margin: 5px 0;
             }
-            .header h1 {
-                font-size: 2em;
-            }
-            .header p {
-                font-size: 1em;
-            }
-            .skill-circle {
-                width: 80px;
-                height: 80px;
-            }
-            .skill-circle .percentage {
-                font-size: 16px;
+            .download-btn {
+                margin-top: 10px;
             }
         }
         @media (max-width: 480px) {
-            .contact-section p {
-                font-size: 0.9em;
-            }
-            .contact-section a {
-                font-size: 1em;
-            }
-            .skill-container {
+            .skill-container, .tech-container {
                 flex-direction: column;
                 align-items: center;
-                gap: 10px;
             }
-            .skill-circle {
+            .skill-circle, .tech-meter {
                 margin: 10px 0;
-                width: 80px;
-                height: 80px;
-            }
-            .skill-circle .percentage {
-                font-size: 14px;
             }
         }
     </style>
 </head>
 <body>
     <div class="navbar">
-        <a href="#about">About Me</a>
-        <a href="#skills">Programming Skills</a>
-        <a href="#education">Education</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button class="download-btn" onclick="window.location.href='https://github.com/ThabangTebele/VirtualCV.github.io/raw/main/Thabang%20Tebele%20CV.pdf'">Download CV</button>
     </div>
-    <div class="container content">
-        <div class="header">
+    <div class="container">
+        <div id="about" class="header">
             <h1>Thabang Tebele</h1>
             <p>Software Developer</p>
         </div>
-        <div id="about" class="left-column">
-            <div class="section">
-                <h2>About Me</h2>
-                <p>I am a final-year student studying information technology,
-                    and I am interested in using technology to inspire
-                    creativity and find solutions to challenging issues. I have
-                    built a solid foundation in data analysis, network security,
-                    and software development over my academic career. My
-                    desire to be at the forefront of technological
-                    advancements drives me to keep learning and developing
-                    in this constantly changing industry. To provide meaningful
-                    solutions, I am eager to expand my knowledge, contribute
-                    to current studies, and work with like-minded individuals.</p>
-            </div>
-            <div id="skills" class="section">
-                <h2>Programming Skills</h2>
-                <div class="skill-container">
-                    <div class="skill-circle">
-                        <svg width="100" height="100">
-                            <circle cx="50" cy="50" r="45" class="circle-background"></circle>
-                            <circle cx="50" cy="50" r="45" class="circle-progress" style="stroke: #2196F3; stroke-dashoffset: 56;"></circle>
-                            <text x="50" y="50" class="percentage" text-anchor="middle" alignment-baseline="middle">80%</text>
-                        </svg>
-                        <div class="label">C#</div>
-                    </div>
-                    <div class="skill-circle">
-                        <svg width="100" height="100">
-                            <circle cx="50" cy="50" r="45" class="circle-background"></circle>
-                            <circle cx="50" cy="50" r="45" class="circle-progress" style="stroke: #2196F3; stroke-dashoffset: 56;"></circle>
-                            <text x="50" y="50" class="percentage" text-anchor="middle" alignment-baseline="middle">80%</text>
-                        </svg>
-                        <div class="label">C++</div>
-                    </div>
-                    <div class="skill-circle">
-                        <svg width="100" height="100">
-                            <circle cx="50" cy="50" r="45" class="circle-background"></circle>
-                            <circle cx="50" cy="50" r="45" class="circle-progress" style="stroke: #2196F3; stroke-dashoffset: 70;"></circle>
-                            <text x="50" y="50" class="percentage" text-anchor="middle" alignment-baseline="middle">75%</text>
-                        </svg>
-                        <div class="label">Python</div>
-                    </div>
-                    <div class="skill-circle">
-                        <svg width="100" height="100">
-                            <circle cx="50" cy="50" r="45" class="circle-background"></circle>
-                            <circle cx="50" cy="50" r="45" class="circle-progress" style="stroke: #2196F3; stroke-dashoffset: 112;"></circle>
-                            <text x="50" y="50" class="percentage" text-anchor="middle" alignment-baseline="middle">60%</text>
-                        </svg>
-                        <div class="label">HTML | CSS</div>
-                    </div>
+        <div class="section">
+            <h2>About Me</h2>
+            <p>I am a final-year student studying information technology,
+                and I am interested in using technology to inspire
+                creativity and find solutions to challenging issues. I have
+                built a solid foundation in data analysis, network security,
+                and software development over my academic career. My
+                desire to be at the forefront of technological
+                advancements drives me to keep learning and developing
+                in this constantly changing industry. To provide meaningful
+                solutions, I am eager to expand my knowledge, contribute
+                to current studies, and work with like-minded individuals.</p>
+        </div>
+        <div id="skills" class="section">
+            <h2>Programming Skills</h2>
+            <div class="skill-container">
+                <div class="skill-circle">
+                    <svg width="100" height="100">
+                        <circle cx="50" cy="50" r="45" class="circle-background"></circle>
+                        <circle cx="50" cy="50" r="45" class="circle-progress" style="stroke: #2196F3; stroke-dashoffset: 56;"></circle>
+                        <text x="50" y="50" class="percentage" text-anchor="middle" alignment-baseline="middle">80%</text>
+                    </svg>
+                    <div class="label">C#</div>
+                </div>
+                <div class="skill-circle">
+                    <svg width="100" height="100">
+                        <circle cx="50" cy="50" r="45" class="circle-background"></circle>
+                        <circle cx="50" cy="50" r="45" class="circle-progress" style="stroke: #2196F3; stroke-dashoffset: 56;"></circle>
+                        <text x="50" y="50" class="percentage" text-anchor="middle" alignment-baseline="middle">80%</text>
+                    </svg>
+                    <div class="label">C++</div>
+                </div>
+                <div class="skill-circle">
+                    <svg width="100" height="100">
+                        <circle cx="50" cy="50" r="45" class="circle-background"></circle>
+                        <circle cx="50" cy="50" r="45" class="circle-progress" style="stroke: #2196F3; stroke-dashoffset: 70;"></circle>
+                        <text x="50" y="50" class="percentage" text-anchor="middle" alignment-baseline="middle">75%</text>
+                    </svg>
+                    <div class="label">MySQL | Oracle</div>
+                </div>
+                <div class="skill-circle">
+                    <svg width="100" height="100">
+                        <circle cx="50" cy="50" r="45" class="circle-background"></circle>
+                        <circle cx="50" cy="50" r="45" class="circle-progress" style="stroke: #2196F3; stroke-dashoffset: 84;"></circle>
+                        <text x="50" y="50" class="percentage" text-anchor="middle" alignment-baseline="middle">70%</text>
+                    </svg>
+                    <div class="label">Java</div>
+                </div>
+                <div class="skill-circle">
+                    <svg width="100" height="100">
+                        <circle cx="50" cy="50" r="45" class="circle-background"></circle>
+                        <circle cx="50" cy="50" r="45" class="circle-progress" style="stroke: #2196F3; stroke-dashoffset: 98;"></circle>
+                        <text x="50" y="50" class="percentage" text-anchor="middle" alignment-baseline="middle">65%</text>
+                    </svg>
+                    <div class="label">Python</div>
+                </div>
+                <div class="skill-circle">
+                    <svg width="100" height="100">
+                        <circle cx="50" cy="50" r="45" class="circle-background"></circle>
+                        <circle cx="50" cy="50" r="45" class="circle-progress" style="stroke: #2196F3; stroke-dashoffset: 112;"></circle>
+                        <text x="50" y="50" class="percentage" text-anchor="middle" alignment-baseline="middle">60%</text>
+                    </svg>
+                    <div class="label">HTML | CSS</div>
                 </div>
             </div>
         </div>
-        <div id="education" class="right-column">
-            <div class="section">
-                <h2>Education</h2>
-                <p><strong>North-West University</strong>, BSc Information Technology, February 2022 - December 2024</p>
-                <ul>
-                    <li>Desktop Development</li>
-                    <li>Data Structures and Algorithms</li>
-                    <li>User Interface Programming</li>
-                    <li>Object-Oriented Programming</li>
-                    <li>System Analysis and Design</li>
-                </ul>
-            </div>
-            <div id="experience" class="section">
-                <h2>Experience</h2>
-                <p><strong>Promotor</strong>, Samplex Africa, November 2021 - February 2022</p>
-                <ul>
-                    <li>In my role, I was responsible for visiting various stores
-                        assigned to me and promoting Xiaomi smartphones to
-                        customers. Given that Xiaomi was not a well-known brand
-                        in South Africa at the time, many customers were
-                        unfamiliar with it. My task was to introduce them to Xiaomi,
-                        highlighting the brand's unique features and benefits to
-                        encourage them to consider purchasing these
-                        smartphones.
-                    </li>
-                </ul>
-                <p><strong>Student Assistant</strong>, North-West University, March 2022 - October 2022</p>
-                <ul>
-                    <li>I got the opportunity to help students who were having
-                        trouble with the Descriptive Statistics and Inference
-                        module. In this position, I helped individuals one-on-one
-                        by breaking down difficult ideas and assisting them in
-                        solving difficult challenges. In addition, I worked with the
-                        lecturer to ensure that student papers were awarded
-                        marks fairly and accurately. My knowledge of the subject
-                        has improved as a result of this experience, which has also
-                        improved my mentoring and communication abilities.
-                    </li>
-                </ul>
-            </div>
-            <div id="projects" class="section">
-                <h2>Projects</h2>
-                <p><strong>Coffee Store</strong></p>
-                <p>Brief description</p>
-                <p><strong>Messaging App</strong></p>
-                <p>Brief description</p>
-            </div>
+        <div id="education" class="section">
+            <h2>Education</h2>
+            <p><strong>North-West University</strong>, BSc Information Technology, February 2022 - December 2024</p>
+            <ul>
+                <li>Desktop Development</li>
+                <li>Data Structures and Algorithms</li>
+                <li>User Interface Programming</li>
+                <li>Object-Oriented Programming</li>
+                <li>System Analysis and Design</li>
+            </ul>
+        </div>
+        <div id="experience" class="section">
+            <h2>Experience</h2>
+            <p><strong>Promotor</strong>, Samplex Africa, November 2021 - February 2022</p>
+            <ul>
+                <li>In my role, I was responsible for visiting various stores
+                    assigned to me and promoting Xiaomi smartphones to
+                    customers. Given that Xiaomi was not a well-known brand
+                    in South Africa at the time, many customers were
+                    unfamiliar with it. My task was to introduce them to Xiaomi,
+                    highlighting the brand's unique features and benefits to
+                    encourage them to consider purchasing these
+                    smartphones.
+                </li>
+            </ul>
+            <p><strong>Student Assistant</strong>, North-West University, March 2022 - October 2022</p>
+            <ul>
+                <li>I got the opportunity to help students who were having
+                    trouble with the Descriptive Statistics and Inference
+                    module. In this position, I helped individuals one-on-one
+                    by breaking down difficult ideas and assisting them in
+                    solving difficult challenges. In addition, I worked with the
+                    lecturer to ensure that student papers were awarded
+                    marks fairly and accurately. My knowledge of the subject
+                    has improved as a result of this experience, which has also
+                    improved my mentoring and communication abilities.
+                </li>
+            </ul>
+        </div>
+        <div id="projects" class="section">
+            <h2>Projects</h2>
+            <p><strong>Coffee Store</strong></p>
+            <p>Brief description</p>
+            <p><strong>Messaging App</strong></p>
+            <p>Brief description</p>
         </div>
         <div id="contact" class="contact-section">
             <h2>Contact</h2>
@@ -325,5 +309,30 @@
             | <a href="https://github.com/ThabangTebele?tab=repositories" target="_blank">GitHub</a></p>
         </div>
     </div>
+    <script>
+        // Highlight active link in navbar
+        document.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section');
+            const links = document.querySelectorAll('.navbar a');
+
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (pageYOffset >= sectionTop - 60 && pageYOffset < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            links.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
