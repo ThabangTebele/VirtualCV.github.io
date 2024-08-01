@@ -8,223 +8,226 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    padding-top: 60px; /* To prevent content from being hidden behind the fixed navbar */
-}
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+        }
 
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #333;
-    padding: 10px 20px;
-    border-bottom: 2px solid #2196F3;
-    z-index: 1000;
-    transition: background 0.3s ease;
-}
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            padding: 10px 20px;
+            border-bottom: 2px solid #2196F3;
+            z-index: 1000;
+            transition: background 0.3s ease;
+        }
 
-.navbar a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 1.2em;
-    padding: 5px;
-}
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2em;
+            padding: 5px;
+        }
 
-.navbar a:hover, .navbar a.active {
-    background: #2196F3;
-    border-radius: 4px;
-}
+        .navbar a:hover, .navbar a.active {
+            background: #2196F3;
+            border-radius: 4px;
+        }
 
-.download-btn {
-    background: #2196F3;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1.1em;
-}
+        .download-btn {
+            background: #2196F3;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
 
-.download-btn:hover {
-    background: #1e88e5;
-}
+        .download-btn:hover {
+            background: #1e88e5;
+        }
 
-/*.container {
-    max-width: 1200px;
-    margin: auto;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-}*/
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
 
-.header {
-    text-align: center;
-    margin-bottom: 20px;
-}
+        .container.visible {
+            opacity: 1;
+        }
 
-.header h1 {
-    margin: 0;
-    font-size: 3em; /* Increased font size */
-    color: #333;
-}
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-.header p {
-    font-size: 1.5em; /* Increased font size */
-    color: #555;
-}
+        .header h1 {
+            margin: 0;
+            font-size: 3em; /* Increased font size */
+            color: #333;
+        }
 
-.section {
-    margin-bottom: 60px; /* Increased margin to provide more space */
-    padding: 30px; /* Increased padding */
-    border-bottom: 2px solid #e6e6e6;
-    position: relative;
-}
+        .header p {
+            font-size: 1.5em; /* Increased font size */
+            color: #555;
+        }
 
-.section:last-of-type {
-    border-bottom: none;
-}
+        .section {
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
-h2 {
-    border-bottom: 2px solid #2196F3;
-    padding-bottom: 10px; /* Increased padding */
-    font-size: 2em; /* Increased font size */
-    color: #333;
-}
+        h2 {
+            border-bottom: 2px solid #2196F3;
+            padding-bottom: 10px; /* Increased padding */
+            font-size: 2em; /* Increased font size */
+            color: #333;
+        }
 
-.section p {
-    font-size: 1.2em; /* Increased font size */
-}
+        .section p {
+            font-size: 1.2em; /* Increased font size */
+        }
 
-.contact-section {
-    text-align: center;
-    margin-top: 20px;
-    width: 100%;
-    background: #2196F3;
-    color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-}
+        .contact-section {
+            text-align: center;
+            margin-top: 20px;
+            width: 100%;
+            background: #2196F3;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+        }
 
-.contact-section p {
-    margin: 10px 0;
-    font-size: 1.2em; /* Increased font size */
-}
+        .contact-section p {
+            margin: 10px 0;
+            font-size: 1.2em; /* Increased font size */
+        }
 
-.contact-section a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 1.2em;
-}
+        .contact-section a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2em;
+        }
 
-.contact-section a:hover {
-    text-decoration: underline;
-}
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
 
-.contact-section i {
-    margin-right: 10px;
-}
+        .contact-section i {
+            margin-right: 10px;
+        }
 
-.skill-container, .tech-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
+        .skill-container, .tech-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
 
-.skill-circle, .tech-bar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-    text-align: center;
-}
+        .skill-circle, .tech-bar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+            text-align: center;
+        }
 
-.skill-circle:hover, .tech-bar:hover {
-    transform: scale(1.1);
-}
+        .skill-circle:hover, .tech-bar:hover {
+            transform: scale(1.1);
+        }
 
-.skill-circle svg, .tech-bar svg {
-    transform: rotate(0deg); 
-}
+        .skill-circle svg, .tech-bar svg {
+            transform: rotate(0deg); 
+        }
 
-.skill-circle .circle-background, .tech-bar .bar-background {
-    fill: none;
-    stroke: #e6e6e6;
-    stroke-width: 10;
-}
+        .skill-circle .circle-background, .tech-bar .bar-background {
+            fill: none;
+            stroke: #e6e6e6;
+            stroke-width: 10;
+        }
 
-.skill-circle .circle-progress, .tech-bar .bar-progress {
-    fill: none;
-    stroke-width: 10;
-    stroke-linecap: round;
-    stroke-dasharray: 282;
-    stroke-dashoffset: 0;
-}
+        .skill-circle .circle-progress, .tech-bar .bar-progress {
+            fill: none;
+            stroke-width: 10;
+            stroke-linecap: round;
+            stroke-dasharray: 282;
+            stroke-dashoffset: 0;
+        }
 
-.skill-circle .label, .tech-bar .label {
-    margin-top: 10px;
-    font-weight: bold;
-    font-size: 1.2em; /* Increased font size */
-}
+        .skill-circle .label, .tech-bar .label {
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 1.2em; /* Increased font size */
+        }
 
-.skill-circle .percentage, .tech-bar .percentage {
-    font-size: 24px; /* Increased font size */
-    font-weight: bold;
-    fill: #333;
-}
+        .skill-circle .percentage, .tech-bar .percentage {
+            font-size: 24px; /* Increased font size */
+            font-weight: bold;
+            fill: #333;
+        }
 
-.tech-bar {
-    margin: 10px 0;
-    width: 100%;
-}
+        .tech-bar {
+            margin: 10px 0;
+            width: 100%;
+        }
 
-.bar-background {
-    background: #e6e6e6;
-    border-radius: 5px;
-    height: 20px;
-    position: relative;
-    width: 100%;
-}
+        .bar-background {
+            background: #e6e6e6;
+            border-radius: 5px;
+            height: 20px;
+            position: relative;
+            width: 100%;
+        }
 
-.bar-progress {
-    background: #2196F3;
-    height: 100%;
-    border-radius: 5px;
-    transition: width 0.3s ease;
-}
+        .bar-progress {
+            background: #2196F3;
+            height: 100%;
+            border-radius: 5px;
+            transition: width 0.3s ease;
+        }
 
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .navbar a {
-        margin: 5px 0;
-    }
-    .download-btn {
-        margin-top: 10px;
-    }
-}
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .navbar a {
+                margin: 5px 0;
+            }
+            .download-btn {
+                margin-top: 10px;
+            }
+        }
 
-@media (max-width: 480px) {
-    .skill-container, .tech-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .skill-circle, .tech-bar {
-        margin: 10px 0;
-    }
-}
-
+        @media (max-width: 480px) {
+            .skill-container, .tech-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .skill-circle, .tech-bar {
+                margin: 10px 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -240,8 +243,8 @@ h2 {
         </div>
         <button class="download-btn" onclick="window.location.href='https://github.com/ThabangTebele/VirtualCV.github.io/raw/main/Thabang%20Tebele%20CV.pdf'">Download CV</button>
     </div>
-    <div class="container">
-        <div id="about" class="header">
+    <div id="about" class="container">
+        <div class="header">
             <h1>Thabang Tebele</h1>
             <p>Software Developer</p>
         </div>
@@ -258,12 +261,10 @@ h2 {
                 solutions, I am eager to expand my knowledge, contribute
                 to current studies, and work with like-minded individuals.</p>
         </div>
+    </div>
 
 
-
-
-
-        <div id="skills" class="section">
+    <div id="skills" class="section">
             <h2>Programming Skills</h2>
             <div class="skill-container">
                 <div class="skill-circle">
@@ -318,138 +319,146 @@ h2 {
         </div>
 
 
-        <div id="technologies" class="section">
-            <h2>Technologies</h2>
-            <div class="tech-container">
-                <div class="tech-bar">
-                    <div class="bar-background">
-                        <div class="bar-progress" style="width: 70%;"></div>
-                    </div>
-                    <div class="label">React</div>
+    <div id="technologies" class="section">
+        <h2>Technologies</h2>
+        <div class="tech-container">
+            <div class="tech-bar">
+                <div class="bar-background">
+                    <div class="bar-progress" style="width: 70%;"></div>
                 </div>
-                <div class="tech-bar">
-                    <div class="bar-background">
-                        <div class="bar-progress" style="width: 50%;"></div>
-                    </div>
-                    <div class="label">Node.js</div>
-                </div>
-                <div class="tech-bar">
-                    <div class="bar-background">
-                        <div class="bar-progress" style="width: 75%;"></div>
-                    </div>
-                    <div class="label">Draw.io</div>
-                </div>
-                <div class="tech-bar">
-                    <div class="bar-background">
-                        <div class="bar-progress" style="width: 50%;"></div>
-                    </div>
-                    <div class="label">Azure</div>
-                </div>
-                <div class="tech-bar">
-                    <div class="bar-background">
-                        <div class="bar-progress" style="width: 60%;"></div>
-                    </div>
-                    <div class="label">Visual Studio</div>
-                </div>
-                <!-- Add more tech-bar elements here -->
+                <div class="label">React</div>
             </div>
+            <div class="tech-bar">
+                <div class="bar-background">
+                    <div class="bar-progress" style="width: 50%;"></div>
+                </div>
+                <div class="label">Node.js</div>
+            </div>
+            <div class="tech-bar">
+                <div class="bar-background">
+                    <div class="bar-progress" style="width: 75%;"></div>
+                </div>
+                <div class="label">Draw.io</div>
+            </div>
+            <div class="tech-bar">
+                <div class="bar-background">
+                    <div class="bar-progress" style="width: 50%;"></div>
+                </div>
+                <div class="label">Azure</div>
+            </div>
+            <div class="tech-bar">
+                <div class="bar-background">
+                    <div class="bar-progress" style="width: 60%;"></div>
+                </div>
+                <div class="label">Visual Studio</div>
+            </div>
+            <!-- Add more tech-bar elements here -->
         </div>
-        
+    </div>
 
+    <div id="education" class="section">
+        <h2>Education</h2>
+        <p><strong>North-West University</strong>, BSc Information Technology, February 2022 - December 2024</p>
+        <ul>
+            <li>Desktop Development</li>
+            <li>Data Structures and Algorithms</li>
+            <li>User Interface Programming</li>
+            <li>Object-Oriented Programming</li>
+            <li>System Analysis and Design</li>
+        </ul>
+    </div>
+    </div>
+    <div id="experience" class="section">
+        <h2>Experience</h2>
+        <p><strong>Promotor</strong>, Samplex Africa, November 2021 - February 2022</p>
+        <ul>
+            <li>In my role, I was responsible for visiting various stores
+                assigned to me and promoting Xiaomi smartphones to
+                customers. Given that Xiaomi was not a well-known brand
+                in South Africa at the time, many customers were
+                unfamiliar with it. My task was to introduce them to Xiaomi,
+                highlighting the brand's unique features and benefits to
+                encourage them to consider purchasing these
+                smartphones.
+            </li>
+        </ul>
+        <p><strong>Student Assistant</strong>, North-West University, March 2022 - October 2022</p>
+        <ul>
+            <li>I got the opportunity to help students who were having
+                trouble with the Descriptive Statistics and Inference
+                module. In this position, I helped individuals one-on-one
+                by breaking down difficult ideas and assisting them in
+                solving difficult challenges. In addition, I worked with the
+                lecturer to ensure that student papers were awarded
+                marks fairly and accurately. My knowledge of the subject
+                has improved as a result of this experience, which has also
+                improved my mentoring and communication abilities.
+            </li>
+        </ul>
+    </div>
 
-        <div id="education" class="section">
-            <h2>Education</h2>
-            <p><strong>North-West University</strong>, BSc Information Technology, February 2022 - December 2024</p>
-            <ul>
-                <li>Desktop Development</li>
-                <li>Data Structures and Algorithms</li>
-                <li>User Interface Programming</li>
-                <li>Object-Oriented Programming</li>
-                <li>System Analysis and Design</li>
-            </ul>
-        </div>
-
-
-
-
-
-        <div id="experience" class="section">
-            <h2>Experience</h2>
-            <p><strong>Promotor</strong>, Samplex Africa, November 2021 - February 2022</p>
-            <ul>
-                <li>In my role, I was responsible for visiting various stores
-                    assigned to me and promoting Xiaomi smartphones to
-                    customers. Given that Xiaomi was not a well-known brand
-                    in South Africa at the time, many customers were
-                    unfamiliar with it. My task was to introduce them to Xiaomi,
-                    highlighting the brand's unique features and benefits to
-                    encourage them to consider purchasing these
-                    smartphones.
-                </li>
-            </ul>
-            <p><strong>Student Assistant</strong>, North-West University, March 2022 - October 2022</p>
-            <ul>
-                <li>I got the opportunity to help students who were having
-                    trouble with the Descriptive Statistics and Inference
-                    module. In this position, I helped individuals one-on-one
-                    by breaking down difficult ideas and assisting them in
-                    solving difficult challenges. In addition, I worked with the
-                    lecturer to ensure that student papers were awarded
-                    marks fairly and accurately. My knowledge of the subject
-                    has improved as a result of this experience, which has also
-                    improved my mentoring and communication abilities.
-                </li>
-            </ul>
-        </div>
-
-
-
-
-
-        <div id="projects" class="section">
+    <div id="projects" class="section">
             <h2>Projects</h2>
             <p><strong>Coffee Store</strong></p>
             <p>Brief description</p>
             <p><strong>Messaging App</strong></p>
             <p>Brief description</p>
-        </div>
-        <div id="contact" class="contact-section">
-            <h2>Contact</h2>
-            <p><i class="fas fa-envelope"></i> thabangteble123@gmail.com</p>
-            <p><i class="fas fa-phone"></i> 071 186 5015</p>
-            <p><a href="https://www.linkedin.com/in/thabang-tebele-014895295" target="_blank">LinkedIn</a>
-            | <a href="https://github.com/ThabangTebele?tab=repositories" target="_blank">GitHub</a></p>
-        </div>
     </div>
 
 
-
-
-
+    <div id="contact" class="contact-section">
+        <h2>Contact</h2>
+        <p><i class="fas fa-envelope"></i> thabangteble123@gmail.com</p>
+        <p><i class="fas fa-phone"></i> 071 186 5015</p>
+        <p><a href="https://www.linkedin.com/in/thabang-tebele-014895295" target="_blank">LinkedIn</a>
+        |<a href="https://github.com/ThabangTebele?tab=repositories" target="_blank">GitHub</a></p>
+    </div>
+    </div>
     <script>
-        // Highlight active link in navbar
-        document.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('.section');
-            const links = document.querySelectorAll('.navbar a');
-
-            let current = '';
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-
-                if (pageYOffset >= sectionTop - 60 && pageYOffset < sectionTop + sectionHeight) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            links.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
+        // Smooth scrolling
+        document.querySelectorAll('.navbar a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
+
+        // Adding visible class to sections on scroll
+        const containers = document.querySelectorAll('.container');
+        const options = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        containers.forEach(container => {
+            observer.observe(container);
+        });
+
+        // Highlight the active section in the navbar
+        const sections = document.querySelectorAll('.section');
+        const navLinks = document.querySelectorAll('.navbar a');
+
+        const setActiveNavLink = () => {
+            let index = sections.length;
+
+            while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+
+            navLinks.forEach((link) => link.classList.remove('active'));
+            navLinks[index].classList.add('active');
+        };
+
+        setActiveNavLink();
+        window.addEventListener('scroll', setActiveNavLink);
     </script>
 </body>
 </html>
