@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My CV</title>
+    <title>Virtual CV</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -58,21 +58,21 @@
         }
 
         .container {
-    width: 100%;
-    height: 100vh; /* Make each section cover the entire viewport height */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
+        width: 100%;
+        height: 100vh; /* Make each section cover the entire viewport height */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        }
 
-.container.visible {
-    opacity: 1;
-}
+        .container.visible {
+        opacity: 1;
+        }
 
-
+        /*header styles*/
         .header {
             text-align: center;
             margin-bottom: 20px;
@@ -80,15 +80,16 @@
 
         .header h1 {
             margin: 0;
-            font-size: 3em; /* Increased font size */
+            font-size: 3em;
             color: #333;
         }
 
         .header p {
-            font-size: 1.5em; /* Increased font size */
+            font-size: 1.5em;
             color: #555;
         }
 
+        /*section edits*/
         .section {
             width: 100%;
             padding: 20px;
@@ -100,13 +101,13 @@
 
         h2 {
             border-bottom: 2px solid #2196F3;
-            padding-bottom: 10px; /* Increased padding */
-            font-size: 2em; /* Increased font size */
+            padding-bottom: 10px; 
+            font-size: 2em;
             color: #333;
         }
 
         .section p {
-            font-size: 1.2em; /* Increased font size */
+            font-size: 1.2em;
         }
 
         .contact-section {
@@ -121,7 +122,7 @@
 
         .contact-section p {
             margin: 10px 0;
-            font-size: 1.2em; /* Increased font size */
+            font-size: 1.2em;
         }
 
         .contact-section a {
@@ -178,11 +179,11 @@
         .skill-circle .label, .tech-bar .label {
             margin-top: 10px;
             font-weight: bold;
-            font-size: 1.2em; /* Increased font size */
+            font-size: 1.2em;
         }
 
         .skill-circle .percentage, .tech-bar .percentage {
-            font-size: 24px; /* Increased font size */
+            font-size: 24px; 
             font-weight: bold;
             fill: #333;
         }
@@ -203,7 +204,7 @@
         .bar-progress {
             background: #2196F3;
             height: 100%;
-            border-radius: 5px;
+            border-radius: 15px;
             transition: width 0.3s ease;
         }
 
@@ -214,7 +215,7 @@
         }   
 
         .project-image {
-            width: 200px; /* Adjust as needed */
+            width: 200px;
             height: auto;
             margin-right: 20px;
             border-radius: 8px;
@@ -222,7 +223,7 @@
         }
 
         .project-description {
-            max-width: 600px; /* Adjust as needed */
+            max-width: 600px; 
         }
 
         .project-description h3 {
@@ -292,15 +293,13 @@
         </div>
         <div class="section">
             <h2>About Me</h2>
-            <p>I am a final-year student studying information technology,
-                and I am interested in using technology to inspire
-                creativity and find solutions to challenging issues. I have
-                built a solid foundation in data analysis, network security,
-                and software development over my academic career. My
-                desire to be at the forefront of technological
-                advancements drives me to keep learning and developing
-                in this constantly changing industry. To provide meaningful
-                solutions, I am eager to expand my knowledge, contribute
+            <p> I am a final-year student studying information technology,<br>
+                and I am interested in using technology to inspire creativity<br>
+                and find solutions to challenging issues. I have built a solid foundation<br>
+                in data analysis, network security, and software development over my academic<br>
+                career. My desire to be at the forefront of technological advancements drives me<br>
+                to keep learning and developing in this constantly changing industry. To provide meaningful<br>
+                solutions, I am eager to expand my knowledge, contribute<br>
                 to current studies, and work with like-minded individuals.</p>
         </div>
     </div>
@@ -325,14 +324,7 @@
                     </svg>
                     <div class="label">C++</div>
                 </div>
-                <div class="skill-circle">
-                    <svg width="100" height="100">
-                        <circle cx="50" cy="50" r="45" class="circle-background"></circle>
-                        <circle cx="50" cy="50" r="45" class="circle-progress" style="stroke: #2196F3; stroke-dashoffset: 70;"></circle>
-                        <text x="50" y="50" class="percentage" text-anchor="middle" alignment-baseline="middle">75%</text>
-                    </svg>
-                    <div class="label">MySQL | Oracle</div>
-                </div>
+                
                 <div class="skill-circle">
                     <svg width="100" height="100">
                         <circle cx="50" cy="50" r="45" class="circle-background"></circle>
@@ -366,35 +358,41 @@
         <div class="tech-container">
             <div class="tech-bar">
                 <div class="bar-background">
-                    <div class="bar-progress" style="width: 70%;"></div>
+                    <div class="bar-progress" style="width: 50%;">50%</div>
                 </div>
                 <div class="label">React</div>
             </div>
             <div class="tech-bar">
                 <div class="bar-background">
-                    <div class="bar-progress" style="width: 50%;"></div>
+                    <div class="bar-progress" style="width: 45%;">45%</div>
                 </div>
                 <div class="label">Node.js</div>
             </div>
             <div class="tech-bar">
                 <div class="bar-background">
-                    <div class="bar-progress" style="width: 75%;"></div>
+                    <div class="bar-progress" style="width: 75%;">75%</div>
                 </div>
                 <div class="label">Draw.io</div>
             </div>
             <div class="tech-bar">
                 <div class="bar-background">
-                    <div class="bar-progress" style="width: 50%;"></div>
+                    <div class="bar-progress" style="width: 50%;">50%</div>
                 </div>
                 <div class="label">Azure</div>
             </div>
             <div class="tech-bar">
                 <div class="bar-background">
-                    <div class="bar-progress" style="width: 60%;"></div>
+                    <div class="bar-progress" style="width: 60%;">60%</div>
                 </div>
                 <div class="label">Visual Studio</div>
             </div>
-            <!-- Add more tech-bar elements here -->
+            <div class="tech-bar">
+                <div class="bar-background">
+                    <div class="bar-progress" style="width: 75%;">75%</div>
+                </div>
+                <div class="label">MySQL|Oracle</div>
+            </div>
+      
         </div>
     </div>
 
@@ -443,7 +441,7 @@
     <h2>Projects</h2>
 
     <div class="project">
-        <img src="https://github.com/ThabangTebele/CoffeeStore/raw/main/coffee-store-image.png" alt="Coffee Store" class="project-image">
+        <img src="https://github.com/ThabangTebele/VirtualCV.github.io/raw/main/Assets/CoffeeShop.png" alt="Coffee Store" class="project-image">
         <div class="project-description">
             <h3>Coffee Store</h3>
             <p>Welcome to the Coffee Shop! This store is pleased to offer you a wonderful selection of freshly brewed coffees, soothing teas, and delectable pastries. From a morning pick-me-up to a relaxed afternoon or simply a sweet indulgence, The Coffee Shop can help quench any craving. Take in the atmosphere of our cozy store while enjoying our quality beverages and baked goods with friendly service. Click
@@ -455,7 +453,7 @@
         <img src="https://github.com/ThabangTebele/VirtualCV.github.io/raw/main/Assets/messagingApp.png" alt="Messaging App" class="project-image">
         <div class="project-description">
             <h3>Messaging App</h3>
-            <p>Brief description of the Messaging App. This app allows users to send and receive messages in real-time, with features like notifications, user profiles, and more. Click
+            <p>Brief description of my groups Messaging App. This app allows users to send and receive messages in real-time, with features like, user profiles, and more. Click
                 <a href="https://github.com/ThabangTebele/MessagingApp" target="_blank">here</a> to visit the repository.</p>
         </div>
     </div>
