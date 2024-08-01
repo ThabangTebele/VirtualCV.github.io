@@ -1,17 +1,17 @@
-# Virtual CV
+# Thabang Tebele CV
 
-Welcome to the Virtual CV repository! This project showcases an interactive, visually appealing online resume for Thabang Tebele. The CV is designed to provide a comprehensive overview of Thabang's skills, experiences, and projects, all presented in a clean and modern layout.
+Welcome to my Virtual CV repository! This project showcases an interactive, visually appealing virtual CV for me. The CV is designed to provide a comprehensive overview of my skills, experiences, and projects, all presented in a clean and modern layout.
 
 ## Features
 
-- **Smooth Scrolling Navigation:** Navigate between different sections of the CV with smooth scrolling effects.
-- **Responsive Design:** The CV adjusts seamlessly to various screen sizes, making it accessible on both desktop and mobile devices.
+- **Smooth Scrolling Navigation:** Navigate between different CV sections with smooth scrolling effects.
+- **Responsive Design:** The CV adjusts seamlessly to various screen sizes, making it accessible on desktop and mobile devices.
 - **Dynamic Section Visibility:** Sections of the CV fade in as you scroll down, enhancing user experience.
 - **Interactive Skills and Technologies:** Visual representations of skills and technologies with progress indicators.
 
 ## Sections
 
-1. **About Me:** A brief introduction and overview of Thabang Tebele.
+1. **About Me:** A brief introduction and overview of me.
 2. **Skills:** A graphical representation of programming skills using progress circles.
 3. **Technologies:** A graphical representation of familiarity with various technologies using progress bars.
 4. **Education:** Details of Thabang's educational background.
@@ -57,7 +57,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Fonts:** [Roboto](https://fonts.google.com/specimen/Roboto)
 - **Icons:** [Font Awesome](https://fontawesome.com/)
 
-Feel free to explore and reach out if you have any questions or feedback!
+
 
 ---
 
